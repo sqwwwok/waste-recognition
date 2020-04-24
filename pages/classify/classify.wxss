@@ -1,0 +1,11 @@
+image{
+  display: block;
+  margin: auto;
+}
+.tip{
+  color: #606266;
+  text-align: center;
+}
+button{
+  margin: 70rpx auto;
+}
