@@ -1,70 +1,42 @@
 // pages/index/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    isTapped: false,
   },
-
-  turnToPage(event){
-    wx.navigateTo({url:event.target.dataset.url})
+  turnToAbout(){
+    var that = this;
+    if(that.data.isTapped) return;
+    that.setData({isTapped: true});
+    Promise.all([this.requestRank(),this.requestCount()])
+      .then((res)=>{
+        var query = `?rank=${res[0]}&count=${res[1]}`;
+        wx.navigateTo({url: `../about/about${query}`});  
+      }).catch(()=>this.setData({isTapped:false}))
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  requestRank () {
+    return new Promise ((resolve,reject)=>{
+      wx.request({
+        url: 'https://www.sqwwwok.cn/mini/rank',
+        success(res){resolve(Number(res.data))},
+        fail(){reject()},
+      })
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  requestCount(){
+    return new Promise ((resolve,reject)=>{
+      wx.request({
+        url: 'https://www.sqwwwok.cn/mini/count',
+        success(res){resolve(Number(res.data))},
+        fail(){reject()}
+      })
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  turnToClassify(){
+    wx.switchTab({
+      url: '../classify/classify',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onShow(){
+    this.setData({isTapped:false})
   }
 })

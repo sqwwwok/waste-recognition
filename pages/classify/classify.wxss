@@ -9,3 +9,7 @@ image{
 button{
   margin: 70rpx auto;
 }
+.result{
+  text-align: center;
+  font-weight: 800;
+}

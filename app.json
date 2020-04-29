@@ -1,18 +1,40 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/classify/classify",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/rule/rule"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "首页",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "asset/images/index.png",
+        "selectedIconPath": "asset/images/index_hover.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "垃圾识别",
+        "iconPath": "asset/images/classify.png",
+        "selectedIconPath": "asset/images/classify_hover.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
     "weui": true
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   }
 }

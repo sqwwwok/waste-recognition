@@ -1,33 +1,35 @@
 <!--pages/classify/classify.wxml-->
 <view>
-  <image mode="aspectFit" 
-  src="{{imagePath || '../../asset/images/Kurisu.png'}}"></image>
+  <image mode="aspectFit" src="{{imagePath || '../../asset/images/Kurisu.png'}}"></image>
   <view class="tip">注意：格式只能为png,jpg,jpeg</view>
-  <button type="primary" bindtap="chooseImage">选取图片</button>
-  <button type="warn" bindtap="classify" 
-  wx:if="{{imagePath}}">重新识别</button>
 
   <view class='loading'>
     <mp-loading show="{{classifyProcess==='loading'}}" 
     type="circle" tips="识别中">
     </mp-loading>    
   </view>
-  <mp-halfScreenDialog class='successed' 
-  show="{{classifyProcess==='successed'}}">
-    <view slot="title">
-      <text>识别结果为: </text>
-      <text class="class-result">{{ classifyResult }}</text>
+  <mp-halfScreenDialog class='successed' show="{{classifyProcess==='successed'}}" bindclose="">
+    <view class="result" slot="title">
+      识别结果：{{ classifyResult }}
     </view>
-    <view slot="desc">
-      <text>给这次识别打个分吧</text>
-      <slider min="0" max="100" value="{{rankValue}}" show-value="true"></slider> 
+    <view class="result" slot="desc">
+      {{ resultToDesc[classifyResult] }}
     </view>
-    <view slot="footer">
-      <button type="primary" bindtap="rank">打分</button>
+    <view class="rank" slot="footer">
+      <view wx:if="{{isRanked}}">谢谢您的评价！</view>
+      <view wx:else>
+        <slider min="0" max="100" value="{{rankValue}}" show-value="true"></slider> 
+        <button type="primary" bindtap="rank">给这次识别打分</button>
+      </view>
+      <button type="default" bindtap="getLocation">当地垃圾分类规范</button>
     </view>   
   </mp-halfScreenDialog>
-  <mp-toptips class="failed" type="error" msg="淦，识别失败！"
+  <mp-toptips class="failed" type="error" msg="{{failedMsg}}"
    show="{{classifyProcess==='failed'}}" >
   </mp-toptips>
+
+  <button type="primary" bindtap="chooseImage">选取图片</button>
+  <button type="default" bindtap="classify" wx:if="{{imagePath}}">重新识别</button>
+
 </view>
-<button bindtap="test">调试</button>
+<button wx:if="{{true}}" bindtap="test" size="mini">识别成功的效果测试</button>

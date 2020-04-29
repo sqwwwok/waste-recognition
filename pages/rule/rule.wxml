@@ -1,0 +1,13 @@
+<view class="main">
+  <view class="province">
+    {{province}}
+  </view>
+  <view class="rules">
+    <view class="rule" wx:for="{{rules}}" wx:key="type">
+      <view class="type">{{item.type}}</view>
+      <view class="desc">{{item.desc}}</view>
+    </view>
+  </view>
+</view>
+
+<button class="test" wx:if="{{true}}" bindtap="test">调试</button>

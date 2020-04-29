@@ -1,10 +1,10 @@
 <!--pages/index/index.wxml-->
 <view class="main">
   <view class="name">垃圾识别</view>
-  <image class="logo" mode="aspectFit">here is my logo</image>
+  <image class="logo" mode="aspectFit" src="../../asset/images/logo.jpg">here is my logo</image>
   <text class="description">
     您可以上传一张图片，然后我们会帮您识别出图片中的东西属于什么类型的垃圾。
   </text>
-  <button type="primary" data-url="../classify/classify" bindtap="turnToPage">开始识别</button>
-  <button type="primary" data-url="../about/about" bindtap="turnToPage">关于我们</button>
+  <button type="primary" data-url="../classify/classify" bindtap="turnToClassify">开始识别</button>
+  <button type="primary" data-url="../about/about" bindtap="turnToAbout">关于我们</button>
 </view>

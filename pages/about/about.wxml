@@ -1,20 +1,19 @@
 <view class="about">
-  <view class="introduce">
-    <view class="title">介绍</view>
-    这是节能减排大赛的一个项目，考虑到人们生活中，经常不知道垃圾如何去分类，我们着手开发了这个项目，可以让快速分辨手中属于何种垃圾。
-  </view>
   <view class="rank">
-    <view class="title">评价</view>
-    我们的分类准确率高达{{rank}}哦
+    <view class="title">表现</view>
+    迄今为止，我们已经识别了{{count}}张图片！
+    <!-- {{rank}} -->
+    根据用户的评分，我们的分类准确率平均达到了10%！
   </view>
   <view class="members">
     <view class="title">成员</view>
     张力丹，熊江治乾，廖远鸿，宋天宇，刘子豪
   </view>
   <view class="feedback">
-    <view class="title">反馈</view>
-    欢迎提Bug或者建议！（2569362147@qq.com）
+    <view class="title">联系我们</view>
+    欢迎各种意见，也可以直接到github.com/sqwwwok/waste-recognition提BUG。
+    <button open-type="feedback" type="primary">反馈</button>
   </view>
-
 </view>
+
 
