@@ -3,5 +3,7 @@ App({
   onShow(options){},
   onHide(){},
   onError(){},
-  globalData: 'Hi'
+  globalData: {
+    debugger: false 
+  }
 })

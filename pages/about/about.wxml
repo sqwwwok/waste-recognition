@@ -3,7 +3,7 @@
     <view class="title">表现</view>
     迄今为止，我们已经识别了{{count}}张图片！
     <!-- {{rank}} -->
-    根据用户的评分，我们的分类准确率平均达到了10%！
+    根据用户的评分，我们的分类准确率平均达到了{{rank}}%！
   </view>
   <view class="members">
     <view class="title">成员</view>

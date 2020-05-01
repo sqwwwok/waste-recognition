@@ -14,7 +14,8 @@ Page({
     classifyProcess: 'null',
     rankValue: 100,
     isRanked: false,
-    failedMsg: ""
+    failedMsg: "",
+    debug: getApp().globalData.debugger,
   },
 
   // 选择图片
@@ -79,6 +80,7 @@ Page({
     BMap.regeocoding({
       success(res){
         var province = res.originalData.result.addressComponent.province;
+        console.log(province);
         that.getLocationSuccessed(province)
       },
       fail(){
@@ -96,6 +98,11 @@ Page({
 
 
   // 评分
+  changeSlider(event){
+    this.setData({
+      rankValue: event.detail.value
+    })
+  },
   rank(){
     var that = this;
     wx.request({
@@ -119,6 +126,6 @@ Page({
   },
 
   test(){
-    this.getLocationSuccessed('anhui')
+    this.getLocationSuccessed('安徽省')
   },
 })

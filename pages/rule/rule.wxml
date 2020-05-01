@@ -1,4 +1,8 @@
-<view class="main">
+<view class="error" wx:if="{{errorInfo}}">
+  {{errorInfo}}
+</view>
+
+<view class="main" wx:else>
   <view class="province">
     {{province}}
   </view>
@@ -8,6 +12,9 @@
       <view class="desc">{{item.desc}}</view>
     </view>
   </view>
+  <view class="postscripts">
+    {{postscripts}}
+  </view>
 </view>
 
-<button class="test" wx:if="{{true}}" bindtap="test">调试</button>
+<button class="test" wx:if="{{debug}}" bindtap="test">调试</button>

@@ -18,7 +18,7 @@
     <view class="rank" slot="footer">
       <view wx:if="{{isRanked}}">谢谢您的评价！</view>
       <view wx:else>
-        <slider min="0" max="100" value="{{rankValue}}" show-value="true"></slider> 
+        <slider min="0" max="100" value="{{rankValue}}" show-value="true" bindchange="changeSlider"></slider> 
         <button type="primary" bindtap="rank">给这次识别打分</button>
       </view>
       <button type="default" bindtap="getLocation">当地垃圾分类规范</button>
@@ -32,4 +32,5 @@
   <button type="default" bindtap="classify" wx:if="{{imagePath}}">重新识别</button>
 
 </view>
-<button wx:if="{{true}}" bindtap="test" size="mini">识别成功的效果测试</button>
+
+<button wx:if="{{debug}}" bindtap="test">调试</button>

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/classify/classify",
     "pages/about/about",
-    "pages/rule/rule"
+    "pages/rule/rule",
+    "pages/game/game"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,5 +37,6 @@
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
-  }
+  },
+  "debug": true
 }

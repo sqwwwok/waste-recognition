@@ -1,1 +1,23 @@
 /* pages/rule/rule.wxss */
+.province{
+  text-align: center;
+  font-size: 60rpx;
+}
+.rules{
+  border-top: 10rpx solid black;
+}
+.rule{
+  margin: 50rpx;
+  border: 5rpx solid black;
+  border-radius: 20rpx;
+}
+.rule .type{
+  font-size: 50rpx;
+}
+.rule .desc{
+  font-size: 40rpx;
+}
+.postscripts{
+  margin-top: 50rpx;
+  color: #909399;
+}
