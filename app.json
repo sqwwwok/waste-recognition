@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/classify/classify",
+    "pages/index/index",
     "pages/about/about",
     "pages/rule/rule",
     "pages/game/game"
@@ -15,16 +15,16 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "asset/images/index.png",
-        "selectedIconPath": "asset/images/index_hover.png"
-      },
-      {
         "pagePath": "pages/classify/classify",
-        "text": "垃圾识别",
+        "text": "垃圾分类",
         "iconPath": "asset/images/classify.png",
         "selectedIconPath": "asset/images/classify_hover.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "关于我们",
+        "iconPath": "asset/images/index.png",
+        "selectedIconPath": "asset/images/index_hover.png"
       }
     ]
   },

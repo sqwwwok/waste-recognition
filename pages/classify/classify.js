@@ -27,12 +27,29 @@ Page({
       count: 1,
       sizeType: ['compressed','original'],
       sourceType: ['album','camera'],
-      success(res){that.chooseImageSuccessed(res)},
+      success(res){
+        let imagePath = res.tempFilePaths[0];
+        that.chooseImageSuccessed(imagePath);
+      },
       fail(){that.chooseImageFailed()},
     })
   },
-  chooseImageSuccessed (res) {
-    var imagePath = res.tempFilePaths[0];
+  takePhoto(){
+    var that = this;
+    if(that.data.imagePath){
+      that.setData({imagePath: ''});
+    }else{
+      const ctx = wx.createCameraContext();
+      ctx.takePhoto({
+        quality:'high',
+        success(res){
+          that.setData({takePhotoTitle: '重新拍照'})
+          that.chooseImageSuccessed(res.tempImagePath);
+        }
+      })
+    }
+  },
+  chooseImageSuccessed (imagePath) {
     this.setData({imagePath});
     this.classify();      
   },
@@ -51,7 +68,7 @@ Page({
       name: 'pic',
       url: 'https://www.sqwwwok.cn/mini/classify',
       success(res){that.classifySuccessed(res)},
-      fail(){that.classifyFailed("识别失败")},
+      fail(){that.classifyFailed("服务器繁忙")},
     });
   },
   classifySuccessed (res) {
@@ -62,7 +79,7 @@ Page({
         isRanked: false
       });
     }else{
-      this.classifyFailed();
+      this.classifyFailed('识别失败');
     }
   },
   classifyFailed (failedMsg) {

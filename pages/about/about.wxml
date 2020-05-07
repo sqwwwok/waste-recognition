@@ -1,17 +1,13 @@
 <view class="about">
-  <view class="rank">
-    <view class="title">表现</view>
-    迄今为止，我们已经识别了{{count}}张图片！
-    <!-- {{rank}} -->
-    根据用户的评分，我们的分类准确率平均达到了{{rank}}%！
-  </view>
-  <view class="members">
-    <view class="title">成员</view>
-    张力丹，熊江治乾，廖远鸿，宋天宇，刘子豪
+  <image class="logo" mode="aspectFit" src="../../asset/images/logo.jpg">here is my logo</image>
+  <view class="slogan">保护环境，从垃圾分类做起</view>
+  <view class="rank count">
+    <view class="title">目前成效</view>
+    迄今为止，我们已经识别了{{count}}张图片,分类准确率平均达到了{{rank}}%！
   </view>
   <view class="feedback">
     <view class="title">联系我们</view>
-    欢迎各种意见，也可以直接到github.com/sqwwwok/waste-recognition提BUG。
+    欢迎各种反馈，也可到https://www.github.com/sqwwwok/waste-recognition提交issue。
     <button open-type="feedback" type="primary">反馈</button>
   </view>
 </view>

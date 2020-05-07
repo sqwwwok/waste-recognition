@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "图片识别",
+  "navigationBarTitleText": "垃圾分类",
   "usingComponents": {
     "mp-loading": "/miniprogram_npm/weui-miniprogram/loading/loading",
     "mp-halfScreenDialog": "/miniprogram_npm/weui-miniprogram/half-screen-dialog/half-screen-dialog",

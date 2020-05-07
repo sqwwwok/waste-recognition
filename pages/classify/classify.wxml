@@ -1,7 +1,12 @@
-<!--pages/classify/classify.wxml-->
-<view>
-  <image mode="aspectFit" src="{{imagePath || '../../asset/images/Kurisu.png'}}"></image>
-  <view class="tip">注意：格式只能为png,jpg,jpeg</view>
+<view class="main">
+  <view>
+    <image mode="aspectFit" wx:if="{{imagePath}}" src="{{imagePath}}"></image>
+    <camera class="camera"  wx:else ></camera>
+    <view class="tip">注意：格式只能为png,jpg,jpeg</view>
+  </view>
+  <button type="primary" bindtap="takePhoto">{{imagePath ? '开启相机' : '拍照识别'}}</button>
+  <button type="primary" bindtap="chooseImage">选图识别</button>
+  <button type="warn" bindtap="classify" wx:if="{{imagePath}}">重新识别该图片</button>
 
   <view class='loading'>
     <mp-loading show="{{classifyProcess==='loading'}}" 
@@ -21,15 +26,12 @@
         <slider min="0" max="100" value="{{rankValue}}" show-value="true" bindchange="changeSlider"></slider> 
         <button type="primary" bindtap="rank">给这次识别打分</button>
       </view>
-      <button type="default" bindtap="getLocation">当地垃圾分类规范</button>
+      <button type="primary" bindtap="getLocation">当地垃圾分类规范</button>
     </view>   
   </mp-halfScreenDialog>
   <mp-toptips class="failed" type="error" msg="{{failedMsg}}"
    show="{{classifyProcess==='failed'}}" >
   </mp-toptips>
-
-  <button type="primary" bindtap="chooseImage">选取图片</button>
-  <button type="default" bindtap="classify" wx:if="{{imagePath}}">重新识别</button>
 
 </view>
 

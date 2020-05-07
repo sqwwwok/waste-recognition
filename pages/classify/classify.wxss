@@ -1,15 +1,25 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+camera{
+  width: 400rpx;
+  height: 400rpx;
+}
 image{
-  display: block;
-  margin: auto;
+  width: 400rpx;
+  height: 400rpx;
 }
 .tip{
   color: #606266;
   text-align: center;
 }
-button{
-  margin: 70rpx auto;
-}
 .result{
   text-align: center;
   font-weight: 800;
+}
+.rank button{
+  margin-bottom: 50rpx;
 }
