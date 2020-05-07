@@ -18,6 +18,17 @@ Page({
     debug: getApp().globalData.debugger,
   },
 
+  onHide(){
+    if(!this.data.imagePath){
+      this.setData({imagePath: '../../asset/images/logo.jpg'})
+    }
+  },
+  onShow(){
+    if(this.data.imagePath==='../../asset/images/logo.jpg'){
+      this.setData({imagePath: ''})
+    }
+  },
+
   // 选择图片
   chooseImage(){
     // 防抖

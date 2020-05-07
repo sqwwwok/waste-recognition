@@ -1,17 +1,16 @@
-// pages/index/index.js
 Page({
   data: {
-    isTapped: false,
+    rank: 0,
+    count: 0,
   },
-  turnToAbout(){
+  onLoad(){
     var that = this;
-    if(that.data.isTapped) return;
-    that.setData({isTapped: true});
-    Promise.all([this.requestRank(),this.requestCount()])
-      .then((res)=>{
-        var query = `?rank=${res[0]}&count=${res[1]}`;
-        wx.navigateTo({url: `../about/about${query}`});  
-      }).catch(()=>this.setData({isTapped:false}))
+    wx.showLoading({title: '统计数据中'});
+    Promise.all([that.requestRank(),that.requestCount()])
+      .then(res=>{
+        that.setData({rank: res[0], count: res[1]});
+        wx.hideLoading();
+      }).catch(()=>wx.hideLoading({}))
   },
   requestRank () {
     return new Promise ((resolve,reject)=>{
@@ -31,12 +30,4 @@ Page({
       })
     });
   },
-  turnToClassify(){
-    wx.switchTab({
-      url: '../classify/classify',
-    })
-  },
-  onShow(){
-    this.setData({isTapped:false})
-  }
 })

@@ -1,7 +1,7 @@
 <view class="main">
-  <view>
-    <image mode="aspectFit" wx:if="{{imagePath}}" src="{{imagePath}}"></image>
-    <camera class="camera"  wx:else ></camera>
+  <view class="photo-getter">
+    <image class="photo" mode="aspectFit" wx:if="{{imagePath}}" src="{{imagePath}}"></image>
+    <camera class="photo"  wx:else ></camera>
     <view class="tip">注意：格式只能为png,jpg,jpeg</view>
   </view>
   <button type="primary" bindtap="takePhoto">{{imagePath ? '开启相机' : '拍照识别'}}</button>

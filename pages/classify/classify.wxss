@@ -4,11 +4,12 @@
   align-items: center;
   justify-content: space-around;
 }
-camera{
-  width: 400rpx;
-  height: 400rpx;
+.photo-getter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-image{
+.photo{
   width: 400rpx;
   height: 400rpx;
 }

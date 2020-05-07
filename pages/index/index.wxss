@@ -4,11 +4,11 @@
   align-items: center;
   justify-content: space-around;
 }
-.name{
-  font-size: 60rpx;
-  width: fit-content;
-}
 .slogan{
+  color: #606266;
   text-align: center;
+}
+.statistics{
+  margin: 20rpx 20rpx;
   font-size: 40rpx;
 }

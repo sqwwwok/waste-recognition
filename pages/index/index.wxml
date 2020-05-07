@@ -1,7 +1,12 @@
 <view class="main">
-  <view class="name">垃圾识别</view>
-  <image class="logo" mode="aspectFit" src="../../asset/images/logo.jpg">here is my logo</image>
-  <view class="slogan">保护环境，从垃圾分类做起</view>
-  <button type="primary" data-url="../classify/classify" bindtap="turnToClassify">开始识别</button>
-  <button type="primary" data-url="../about/about" bindtap="turnToAbout">关于我们</button>
+  <view class="introduction">
+    <image class="logo" mode="aspectFit" src="../../asset/images/logo.jpg">here is my logo</image>
+    <view class="slogan">保护环境，从垃圾分类做起</view>
+  </view>
+  <view class="feedback">
+    <view class="statistics">
+      迄今为止，我们已经识别了{{count}}张图片,分类准确率平均为{{rank}}%，期待您的反馈！  
+    </view>
+    <button  open-type="feedback" type="primary">反馈</button>
+  </view>
 </view>
