@@ -7,7 +7,8 @@
   border-top: 10rpx solid black;
 }
 .rule{
-  margin: 50rpx;
+  margin: 20rpx;
+  margin-bottom: 50rpx;
   border: 5rpx solid black;
   border-radius: 20rpx;
 }

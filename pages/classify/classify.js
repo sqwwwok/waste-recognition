@@ -1,7 +1,7 @@
 // pages/classify/classify.js
 Page({
   data: {
-    imagePath: '',
+    imagePath: '../../asset/images/logo.jpg',
     classifyResult: '',
     resultToDesc: {
       'glass':'玻璃属于可回收垃圾',
@@ -24,9 +24,9 @@ Page({
     }
   },
   onShow(){
-    if(this.data.imagePath==='../../asset/images/logo.jpg'){
-      this.setData({imagePath: ''})
-    }
+    // if(this.data.imagePath==='../../asset/images/logo.jpg'){
+    //   this.setData({imagePath: ''})
+    // }
   },
 
   // 选择图片
