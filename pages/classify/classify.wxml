@@ -4,9 +4,9 @@
     <camera class="photo"  wx:else ></camera>
     <view class="tip">注意：格式只能为png,jpg,jpeg</view>
   </view>
-  <button type="primary" bindtap="takePhoto">{{imagePath ? '开启相机' : '拍照识别'}}</button>
-  <button type="primary" bindtap="chooseImage">选图识别</button>
-  <button type="warn" bindtap="classify" wx:if="{{imagePath}}">重新识别该图片</button>
+  <button class="primary" bindtap="takePhoto">{{imagePath ? '开启相机' : '拍照识别'}}</button>
+  <button class="primary" bindtap="chooseImage">选图识别</button>
+  <button class="warning" bindtap="classify" wx:if="{{imagePath}}">重新识别该图片</button>
 
   <view class='loading'>
     <mp-loading show="{{classifyProcess==='loading'}}" 
