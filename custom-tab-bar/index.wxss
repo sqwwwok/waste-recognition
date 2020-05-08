@@ -1,8 +1,9 @@
 .tabbar{
+  height: 120rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
   background-color: rgba(255,255,255,0.5);
 }
 .tab{
@@ -11,6 +12,6 @@
   align-items: center;
 }
 .icon{
-  height: 80rpx;
-  width: 80rpx;
+  height: 60rpx;
+  width: 60rpx;
 }

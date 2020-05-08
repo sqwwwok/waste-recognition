@@ -5,14 +5,17 @@
 <view class="main">
   <view class="photo-getter">
     <image src="../../asset/images/camera-border.png" mode="aspectFit" class="photo-border"></image>
-    <view class="photo">
-      <image class="photo" mode="aspectFit" wx:if="{{imagePath && imagePath!='blank'}}" src="{{imagePath}}"></image>
-      <camera class="photo" wx:if="{{!imagePath}}"></camera>
+    <view class="photo-container" bindtap="takePhoto">
+      <view class="photo-tip" wx:if="{{imagePath==='blank'}}">点我拍照</view>
+      <camera class="photo" wx:elif="{{!imagePath}}"></camera>
+      <image class="photo" mode="aspectFit" wx:else src="{{imagePath}}"></image>
     </view>
-    <view class="tip">注意：格式只能为png,jpg,jpeg</view>
+    <view class="format-tip">注意：格式只能为png,jpg,jpeg</view>
   </view>
   <view class="button-group">
-    <button class="primary" bindtap="takePhoto">{{imagePath ? '开启相机' : '拍照识别'}}</button>
+    <button class="primary" bindtap="takePhoto">
+      {{imagePath ? '唤醒相机' : '拍照识别'}}
+    </button>
     <button class="primary" bindtap="chooseImage">选图识别</button>
     <button class="warning" bindtap="classify" wx:if="{{imagePath && imagePath!='blank'}}">重新识别该图片</button>
   </view>
@@ -32,9 +35,9 @@
       <view wx:if="{{isRanked}}">谢谢您的评价！</view>
       <view wx:else>
         <slider min="0" max="100" value="{{rankValue}}" show-value="true" bindchange="changeSlider"></slider> 
-        <button type="primary" bindtap="rank">给这次识别打分</button>
+        <button class="primary" bindtap="rank">给这次识别打分</button>
       </view>
-      <button type="primary" bindtap="getLocation">当地垃圾分类规范</button>
+      <button class="primary" bindtap="getLocation">当地垃圾分类规范</button>
     </view>   
   </mp-halfScreenDialog>
   <mp-toptips class="failed" 
@@ -44,6 +47,5 @@
   </mp-toptips>
 
 </view>
-
 
 <button wx:if="{{debug}}" bindtap="test">调试</button>

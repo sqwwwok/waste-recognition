@@ -2,7 +2,7 @@
 Page({
   data: {
     // '' | 'blank' | 'tmep/path'
-    imagePath: '',
+    imagePath: 'blank',
     classifyResult: '',
     resultToDesc: {
       'glass':'玻璃属于可回收垃圾',

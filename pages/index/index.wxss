@@ -1,32 +1,35 @@
 .main{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
-.introduction{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.content .slogan{
+  color: #606266;
+  text-align: center;
+  margin-bottom: 50rpx;
+  font-size: 50rpx;
 }
-.logo{
+.logo-container, .logo{
   width: 400rpx;
   height: 400rpx;
+}
+.logo-container{
   position: relative;
 }
-.image,.canvas{
+.logo{
   position: absolute;
   left: 0rpx;
   top: 0rpx;
 }
-.slogan{
-  color: #606266;
-  text-align: center;
-}
-.statistics{
-  margin: 20rpx 20rpx;
-  font-size: 40rpx;
-}
-.feedback{
-  margin-bottom: 120rpx;
+
+.footer .statistics{
+  margin: 50rpx;
 }
