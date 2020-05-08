@@ -2,29 +2,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .photo-getter{
   position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.photo-getter,.camera-border,.camera,.photo{
-  width: 500rpx;
-  height: 500rpx;
+.photo-getter,.photo-border{
+  width: 700rpx;
+  height: 700rpx;
   border-radius: 50rpx;
-  border-color: transparent;
 }
-.camera-border{
-  z-index: 2;
+.photo-border{
   background-color: transparent;
   position: absolute;
   left: 0px;
   right: 0px;
   top: 0px;
 }
+.photo{
+  background-color: #cccccc;
+  display: flex;
+  width: 400rpx;
+  height: 400rpx;
+}
 .tip{
+  z-index: 2;
   color: #606266;
   text-align: center;
+}
+.button-group button{
+  margin-bottom: 50rpx;
 }
 .successed .result{
   text-align: center;

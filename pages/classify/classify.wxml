@@ -4,21 +4,24 @@
 
 <view class="main">
   <view class="photo-getter">
-    <image src="../../asset/images/camera_border.png" mode="aspectFit" class="camera-border"></image>
-    <image class="photo" mode="aspectFit" wx:if="{{imagePath && imagePath!='blank'}}" src="{{imagePath}}"></image>
-    <camera class="camera"  wx:if="{{!imagePath}}"></camera>
+    <image src="../../asset/images/camera-border.png" mode="aspectFit" class="photo-border"></image>
+    <view class="photo">
+      <image class="photo" mode="aspectFit" wx:if="{{imagePath && imagePath!='blank'}}" src="{{imagePath}}"></image>
+      <camera class="photo" wx:if="{{!imagePath}}"></camera>
+    </view>
+    <view class="tip">注意：格式只能为png,jpg,jpeg</view>
   </view>
-  <view class="tip">注意：格式只能为png,jpg,jpeg</view>
-  <button class="primary" bindtap="takePhoto">{{imagePath ? '开启相机' : '拍照识别'}}</button>
-  <button class="primary" bindtap="chooseImage">选图识别</button>
-  <button class="warning" bindtap="classify" wx:if="{{imagePath && imagePath!='blank'}}">重新识别该图片</button>
-
-  <view class='loading'>
-    <mp-loading show="{{classifyProcess==='loading'}}" 
-    type="circle" tips="识别中">
-    </mp-loading>    
+  <view class="button-group">
+    <button class="primary" bindtap="takePhoto">{{imagePath ? '开启相机' : '拍照识别'}}</button>
+    <button class="primary" bindtap="chooseImage">选图识别</button>
+    <button class="warning" bindtap="classify" wx:if="{{imagePath && imagePath!='blank'}}">重新识别该图片</button>
   </view>
-  <mp-halfScreenDialog class='successed' show="{{classifyProcess==='successed'}}" bindclose="">
+  <mp-toptips class='loading' 
+    type="success" msg="识别中..." delay="2500"
+    show="{{classifyProcess==='loading'}}">
+  </mp-toptips>
+  <mp-halfScreenDialog class='successed' 
+    show="{{classifyProcess==='successed'}}">
     <view class="result" slot="title">
       识别结果：{{ classifyResult }}
     </view>
@@ -34,8 +37,10 @@
       <button type="primary" bindtap="getLocation">当地垃圾分类规范</button>
     </view>   
   </mp-halfScreenDialog>
-  <mp-toptips class="failed" type="error" msg="{{failedMsg}}"
-   show="{{classifyProcess==='failed'}}" >
+  <mp-toptips class="failed" 
+    type="error" 
+    msg="{{failedMsg}}"
+    show="{{classifyProcess==='failed'}}" >
   </mp-toptips>
 
 </view>
