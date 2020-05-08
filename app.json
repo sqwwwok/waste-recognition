@@ -4,6 +4,20 @@
     "pages/index/index",
     "pages/rule/rule"
   ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "classify"
+      },{
+        "pagePath": "pages/index/index",
+        "text": "index"
+    }],
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "custom": true
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -14,6 +28,9 @@
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
     "weui": true
+  },
+  "usingComponents": {
+    "custom-tabbar": "custom-tab-bar/index"
   },
   "permission": {
     "scope.userLocation": {

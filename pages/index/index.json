@@ -1,6 +1,3 @@
 {
-  "navigationBarTitleText": "关于我们",
-  "usingComponents": {
-    "custom-tabbar": "../../components/tabbar/tabbar"
-  }
+  "navigationBarTitleText": "关于我们"
 }

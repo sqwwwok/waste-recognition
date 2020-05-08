@@ -3,7 +3,6 @@
   "usingComponents": {
     "mp-loading": "/miniprogram_npm/weui-miniprogram/loading/loading",
     "mp-halfScreenDialog": "/miniprogram_npm/weui-miniprogram/half-screen-dialog/half-screen-dialog",
-    "mp-toptips": "/miniprogram_npm/weui-miniprogram/toptips/toptips",
-    "custom-tabbar": "../../components/tabbar/tabbar"
+    "mp-toptips": "/miniprogram_npm/weui-miniprogram/toptips/toptips"
   }
 }

@@ -1,0 +1,12 @@
+<view class="tabbar">
+  <view data-pageName="classify" bindtap="toClassify">
+    <image class="icon" wx:if="{{ _pageName==='classify' }}" src="../asset/images/classify_hover.png"></image>
+    <image class="icon" wx:else src="../asset/images/classify.png"></image>
+    <view class="{{ _pageName==='classify' ? 'selected' : 'not-selected'}}">分类识别</view>
+  </view>
+  <view data-pageName="index" bindtap="toIndex">
+    <image class="icon" wx:if="{{ _pageName==='index' }}" src="../asset/images/index_hover.png"></image>
+    <image class="icon" wx:else src="../asset/images/index.png"></image>
+    <view class="{{ _pageName==='index' ? 'selected' : 'not-selected'}}">关于我们</view>
+  </view>
+</view>
