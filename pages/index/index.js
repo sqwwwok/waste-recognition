@@ -2,6 +2,7 @@ Page({
   data: {
     rank: 0,
     count: 0,
+    animation: true
   },
   onLoad(){
     var that = this;
@@ -12,8 +13,16 @@ Page({
         wx.hideLoading();
       }).catch(()=>wx.hideLoading({}))
   },
-  onReady(){
+  onShow(){
+    this.getTabBar().setData({_pageName: 'index'});
+    this.drawCanvas();
+  },
+  onHide(){
+    this.setData({animation: false});
+  },
+  drawCanvas(){
     const query = wx.createSelectorQuery();
+    var that = this;
     query.select('.canvas')
       .fields({node: true,size: true})
       .exec((res)=>{
@@ -27,7 +36,7 @@ Page({
 
         var beforeRect = [marginLeft,marginTop,lineWidth,lineHeight];
         ctx.fillStyle = gradient;
-        function drawLine () {
+        function drawLine (continueAnimation) {
           ctx.clearRect(0,0,width,height);
           if(height-beforeRect[1]<=marginTop) {
             moveLength = -moveLength;
@@ -36,10 +45,9 @@ Page({
           }
           beforeRect[1]+=moveLength;
           ctx.fillRect(...beforeRect);
-          return canvas.requestAnimationFrame(drawLine);
-          // return setTimeout(drawLine,1000);
+          if(continueAnimation) canvas.requestAnimationFrame(drawLine);
         }
-        drawLine();
+        drawLine(that.data.animation);
       })
   },
   requestRank () {

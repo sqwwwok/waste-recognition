@@ -14,8 +14,6 @@
     </view>
   </view>
   <view class="feedback">
-
     <button  open-type="feedback" class="primary">反馈</button>
   </view>
 </view>
-<custom-tabbar class="tabbar" pageName="index"></custom-tabbar>

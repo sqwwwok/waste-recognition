@@ -1,6 +1,7 @@
 // pages/classify/classify.js
 Page({
   data: {
+    // '' | 'blank' | 'tmep/path'
     imagePath: '',
     classifyResult: '',
     resultToDesc: {
@@ -18,9 +19,12 @@ Page({
     debug: getApp().globalData.debugger,
   },
 
+  onShow(){
+    this.getTabBar().setData({_pageName: 'classify'});
+  },
   onHide(){
     if(!this.data.imagePath){
-      this.setData({imagePath: ''})
+      this.setData({imagePath: 'blank'})
     }
   },
 

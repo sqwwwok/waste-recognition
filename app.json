@@ -19,9 +19,7 @@
     "custom": true
   },
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "首页",
+    "navigationBarBackgroundColor": "#16b626",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
@@ -37,5 +35,5 @@
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
   },
-  "debug": true
+  "debug": false
 }

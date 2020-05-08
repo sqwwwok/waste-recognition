@@ -5,13 +5,13 @@
 <view class="main">
   <view class="photo-getter">
     <image src="../../asset/images/camera_border.png" mode="aspectFit" class="camera-border"></image>
-    <image class="photo" mode="aspectFit" wx:if="{{imagePath}}" src="{{imagePath}}"></image>
-    <camera class="camera"  wx:else></camera>
+    <image class="photo" mode="aspectFit" wx:if="{{imagePath && imagePath!='blank'}}" src="{{imagePath}}"></image>
+    <camera class="camera"  wx:if="{{!imagePath}}"></camera>
   </view>
   <view class="tip">注意：格式只能为png,jpg,jpeg</view>
   <button class="primary" bindtap="takePhoto">{{imagePath ? '开启相机' : '拍照识别'}}</button>
   <button class="primary" bindtap="chooseImage">选图识别</button>
-  <button class="warning" bindtap="classify" wx:if="{{imagePath}}">重新识别该图片</button>
+  <button class="warning" bindtap="classify" wx:if="{{imagePath && imagePath!='blank'}}">重新识别该图片</button>
 
   <view class='loading'>
     <mp-loading show="{{classifyProcess==='loading'}}" 
@@ -40,6 +40,5 @@
 
 </view>
 
-<custom-tabbar class="tabbar" pageName="classify"></custom-tabbar>
 
 <button wx:if="{{debug}}" bindtap="test">调试</button>

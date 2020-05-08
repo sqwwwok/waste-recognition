@@ -11,6 +11,8 @@
 .photo-getter,.camera-border,.camera,.photo{
   width: 500rpx;
   height: 500rpx;
+  border-radius: 50rpx;
+  border-color: transparent;
 }
 .camera-border{
   z-index: 2;
@@ -24,10 +26,13 @@
   color: #606266;
   text-align: center;
 }
-.result{
+.successed .result{
   text-align: center;
   font-weight: 800;
 }
-.rank button{
+.successed .rank{
+  margin-bottom: 120rpx;
+}
+.successed .rank button{
   margin-bottom: 50rpx;
 }
