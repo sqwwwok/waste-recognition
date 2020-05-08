@@ -1,3 +1,7 @@
+<view class="bg" >
+  <image class="bg-img" mode="scaleToFill" src="../../asset/images/background.png"></image>
+</view>
+
 <view class="main">
   <view class="photo-getter">
     <image class="photo" mode="aspectFit" wx:if="{{imagePath}}" src="{{imagePath}}"></image>
@@ -34,5 +38,7 @@
   </mp-toptips>
 
 </view>
+
+<custom-tabbar class="tabbar" pageName="classify"></custom-tabbar>
 
 <button wx:if="{{debug}}" bindtap="test">调试</button>

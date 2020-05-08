@@ -22,8 +22,8 @@ Page({
         const gradient = ctx.createLinearGradient(width/2,0,width/2,height);
         gradient.addColorStop(0,'white');
         gradient.addColorStop(1,'black');
-        const marginLeft = width/12, marginTop = height/12, lineWidth = width-2*marginLeft, lineHeight = height/30;
-        var moveLength = height/30;
+        const marginLeft = width/12, marginTop = height/12, lineWidth = width-2*marginLeft, lineHeight = height/40;
+        var moveLength = height/50;
 
         var beforeRect = [marginLeft,marginTop,lineWidth,lineHeight];
         ctx.fillStyle = gradient;

@@ -1,0 +1,17 @@
+.tabbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.icon{
+  height: 80rpx;
+  width: 80rpx;
+}
+.not-selected{
+  color: #606266;
+  text-align: center;
+}
+.selected{
+  color: green;
+  text-align: center;
+}

@@ -2,30 +2,13 @@
   "pages": [
     "pages/classify/classify",
     "pages/index/index",
-    "pages/rule/rule",
-    "pages/game/game"
+    "pages/rule/rule"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "首页",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/classify/classify",
-        "text": "垃圾分类",
-        "iconPath": "asset/images/classify.png",
-        "selectedIconPath": "asset/images/classify_hover.png"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "text": "关于我们",
-        "iconPath": "asset/images/index.png",
-        "selectedIconPath": "asset/images/index_hover.png"
-      }
-    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

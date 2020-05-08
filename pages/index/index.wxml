@@ -1,3 +1,7 @@
+<view class="bg" >
+  <image class="bg-img" mode="scaleToFill" src="../../asset/images/background.png"></image>
+</view>
+
 <view class="main">
   <view class="introduction">
     <view class="logo">
@@ -14,3 +18,4 @@
     <button  open-type="feedback" class="primary">反馈</button>
   </view>
 </view>
+<custom-tabbar class="tabbar" pageName="index"></custom-tabbar>
