@@ -18,7 +18,7 @@
 .photo-getter .photo-border{
   position: absolute;
 }
-.photo-container{
+.photo-getter .photo-container{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,13 +27,14 @@
   height: 300rpx;
   z-index: 2;
 }
-.photo-container .photo-tip{
-  text-align: center;
-  font-size: 60rpx;
-}
-.photo-container .photo{
+.photo-getter .photo-container .photo{
   width: 400rpx;
   height: 300rpx;
+}
+.photo-getter .photo-container .photo-tip{
+  text-align: center;
+  font-size: 60rpx;
+  color: #606266;
 }
 .photo-getter .format-tip{
   z-index: 2;
