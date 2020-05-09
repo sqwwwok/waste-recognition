@@ -1,3 +1,4 @@
+<switch-page-container _rightPage="/pages/index/index">
 <view class="bg" >
   <image class="bg-img" mode="scaleToFill" src="../../asset/images/background.png"></image>
 </view>
@@ -45,7 +46,8 @@
     msg="{{failedMsg}}"
     show="{{classifyProcess==='failed'}}" >
   </mp-toptips>
-
 </view>
 
 <button wx:if="{{debug}}" bindtap="test">调试</button>
+</switch-page-container>
+

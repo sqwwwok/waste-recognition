@@ -1,23 +1,24 @@
+<switch-page-container _leftPage="/pages/classify/classify" >
 <view class="bg" >
   <image class="bg-img" mode="scaleToFill" src="../../asset/images/background.png"></image>
 </view>
 
 <view class="main">
-<view class="content">
-  <view class="slogan">保护环境，从垃圾分类做起</view>
-  <view class="logo-container">
-    <image class="logo" src="../../asset/images/logo.png"></image>
-    <canvas class="logo canvas" type="2d" id="canvas"></canvas>
+  <view class="content">
+    <view class="slogan">保护环境，从垃圾分类做起</view>
+    <view class="logo-container">
+      <image class="logo" src="../../asset/images/logo.png"></image>
+      <canvas class="logo canvas" type="2d" id="canvas"></canvas>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="statistics">
+      <view>迄今为止</view>
+      <view>我们已经识别了{{count}}张图片</view>
+      <view>分类准确率平均为{{rank}}%</view>
+      <view>期待您的反馈！</view>
+    </view>
+    <button class="primary feedback" open-type="feedback">反馈</button>
   </view>
 </view>
-<view class="footer">
-  <view class="statistics">
-    <view>迄今为止</view>
-    <view>我们已经识别了{{count}}张图片</view>
-    <view>分类准确率平均为{{rank}}%</view>
-    <view>期待您的反馈！</view>
-  </view>
-  <button class="primary feedback" open-type="feedback">反馈</button>
-</view>
-
-</view>
+</switch-page-container>

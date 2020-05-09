@@ -28,7 +28,8 @@
     "weui": true
   },
   "usingComponents": {
-    "custom-tabbar": "custom-tab-bar/index"
+    "custom-tabbar": "custom-tab-bar/index",
+    "switch-page-container": "components/swiper-page/index"
   },
   "permission": {
     "scope.userLocation": {
