@@ -1,0 +1,11 @@
+.main{
+  height: 80%;
+  padding-bottom: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tip-content{
+  font-size: 60rpx;
+  text-align: center;
+}

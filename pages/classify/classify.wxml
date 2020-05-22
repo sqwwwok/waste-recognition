@@ -4,6 +4,16 @@
 </view>
 
 <view class="main">
+  <view class="text-getter" wx:if="{{isTextShown}}">
+    <view class="form-container">
+      <input value="{{textContent}}" 
+        bindinput="inputText" 
+        placeholder="请输入内容"
+        focus="true"></input>
+      <button class="primary" bindtap="uploadText">识别</button>
+      <button class="warning" bindtap="completeText">取消</button>
+    </view>
+  </view>
   <view class="photo-getter">
     <image src="../../asset/images/camera-border.png" mode="aspectFit" class="photo-border"></image>
     <view class="photo-container" bindtap="takePhoto">
@@ -18,6 +28,7 @@
       {{imagePath ? '唤醒相机' : '拍照识别'}}
     </button>
     <button class="primary" bindtap="chooseImage">选图识别</button>
+    <button class="primary" bindtap="chooseText">文字识别</button>
     <button class="warning" bindtap="classify" wx:if="{{imagePath && imagePath!='blank'}}">重新识别该图片</button>
   </view>
   <mp-toptips class='loading' 

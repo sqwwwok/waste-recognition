@@ -13,9 +13,11 @@ Page({
     },
     // null | loading | successed | failed
     classifyProcess: 'null',
+    isTextShown: false,
+    textContent: '',
     rankValue: 100,
     isRanked: false,
-    failedMsg: "",
+    failedMsg: '',
     debug: getApp().globalData.debugger,
   },
 
@@ -97,6 +99,31 @@ Page({
       classifyProcess: "failed",
       failedMsg: failedMsg
     });
+  },
+
+  chooseText(){
+    this.setData({isTextShown: true});
+  },
+  inputText(event){
+    this.setData({textContent: event.detail.value});
+  },
+  uploadText(){
+    this.simpleClassify(this.data.textContent);
+    this.completeText();
+  },
+  completeText(){
+    this.setData({isTextShown: false})
+  },
+  simpleClassify (name) {
+    if(this.data.classifyProcess==='loading') return
+    var that = this;
+    name = encodeURIComponent(name);
+    that.setData({classifyProcess:'loading'});
+    wx.request({
+      url: `https://www.sqwwwok.cn/mini/map?name=${name}`,
+      success(res){that.classifySuccessed(res)},
+      fail(){that.classifyFailed("服务器繁忙")},
+    })
   },
 
   // 获取地理位置

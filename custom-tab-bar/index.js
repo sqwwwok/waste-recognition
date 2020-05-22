@@ -8,6 +8,11 @@ Component({
         url: '/pages/classify/classify',
       })
     },
+    toTip(){
+      wx.switchTab({
+        url: '/pages/tip/tip',
+      })
+    },
     toIndex(){
       wx.switchTab({
         url: '/pages/index/index',

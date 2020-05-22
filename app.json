@@ -2,17 +2,24 @@
   "pages": [
     "pages/classify/classify",
     "pages/index/index",
-    "pages/rule/rule"
+    "pages/rule/rule",
+    "pages/tip/tip"
   ],
   "tabBar": {
     "list": [
       {
         "pagePath": "pages/classify/classify",
         "text": "classify"
-      },{
+      },
+      {
         "pagePath": "pages/index/index",
         "text": "index"
-    }],
+      },
+      {
+        "pagePath": "pages/tip/tip",
+        "text": "tip"
+      }
+    ],
     "color": "#000000",
     "selectedColor": "#000000",
     "backgroundColor": "#ffffff",

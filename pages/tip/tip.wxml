@@ -1,0 +1,6 @@
+
+<view class="main">
+  <view class="tip-content">
+    {{tipContent}}
+  </view>
+</view>

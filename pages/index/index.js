@@ -2,7 +2,6 @@ Page({
   data: {
     rank: 0,
     count: 0,
-    animation: true
   },
   onLoad(){
     var that = this;
@@ -10,15 +9,12 @@ Page({
     Promise.all([that.requestRank(),that.requestCount()])
       .then(res=>{
         that.setData({rank: res[0], count: res[1]});
+        that.drawCanvas();
         wx.hideLoading();
       }).catch(()=>wx.hideLoading({}))
   },
   onShow(){
     this.getTabBar().setData({_pageName: 'index'});
-    this.drawCanvas();
-  },
-  onHide(){
-    this.setData({animation: false});
   },
   drawCanvas(){
     const query = wx.createSelectorQuery();
@@ -47,7 +43,7 @@ Page({
           ctx.fillRect(...beforeRect);
           if(continueAnimation) canvas.requestAnimationFrame(drawLine);
         }
-        drawLine(that.data.animation);
+        drawLine(true);
       })
   },
   requestRank () {
