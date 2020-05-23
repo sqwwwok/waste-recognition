@@ -1,0 +1,3 @@
+<view class="bg" >
+  <image class="bg-img" mode="scaleToFill" src="../../asset/images/background.png"></image>
+</view>

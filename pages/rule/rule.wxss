@@ -7,10 +7,11 @@
   border-top: 10rpx solid black;
 }
 .rule{
-  margin: 20rpx;
-  margin-bottom: 50rpx;
+  margin: 40rpx;
   border: 5rpx solid black;
   border-radius: 20rpx;
+  padding: 20rpx;
+  background-color: rgba(255,255,255,0.5);
 }
 .rule .type{
   font-size: 50rpx;

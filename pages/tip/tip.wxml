@@ -1,6 +1,13 @@
-
+<bg-image></bg-image>
 <view class="main">
-  <view class="tip-content">
-    {{tipContent}}
+<view class="tip">
+  <view class="tip-title">
+    你知道吗？
   </view>
+  <view class="tip-container">
+    <image class="tip-bg" mode="widthFix" src="../../asset/images/tip-bg.png"></image>
+    <view class="tip-content">{{tipContent}}</view>
+  </view>
+</view>
+
 </view>

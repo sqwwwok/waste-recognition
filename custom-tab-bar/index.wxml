@@ -4,7 +4,7 @@
     <image class="icon" wx:else src="../asset/images/classify.png"></image>
     <view>分类识别</view>
   </view>
-  <view class="tab tip" bindtap="toTip">
+  <view class="{{'tab tip '+ (_pageName==='tip' ? 'tip-choosen' : '')}}" bindtap="toTip">
     <view class="tip-title">环保</view>
     <view class="tip-title">小</view>
     <view class="tip-title">知识</view>

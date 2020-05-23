@@ -4,13 +4,6 @@ Page({
     // '' | 'blank' | 'tmep/path'
     imagePath: 'blank',
     classifyResult: '',
-    resultToDesc: {
-      'glass':'玻璃属于可回收垃圾',
-      'paper': '卫生纸类属于干垃圾（其他垃圾），书写纸属于可回收垃圾',
-      'metal': '金属属于可回收垃圾',
-      'plastic': '塑料属于可回收垃圾，塑料袋属于不可回收垃圾',
-      'cardboard': '纸板箱属于可回收垃圾'
-    },
     // null | loading | successed | failed
     classifyProcess: 'null',
     isTextShown: false,

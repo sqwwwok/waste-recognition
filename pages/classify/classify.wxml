@@ -1,7 +1,5 @@
 <switch-page-container _rightPage="/pages/index/index">
-<view class="bg" >
-  <image class="bg-img" mode="scaleToFill" src="../../asset/images/background.png"></image>
-</view>
+<bg-image></bg-image>
 
 <view class="main">
   <view class="text-getter" wx:if="{{isTextShown}}">
@@ -38,10 +36,10 @@
   <mp-halfScreenDialog class='successed' 
     show="{{classifyProcess==='successed'}}">
     <view class="result" slot="title">
-      识别结果：{{ classifyResult }}
+      识别成功！
     </view>
     <view class="result" slot="desc">
-      {{ resultToDesc[classifyResult] }}
+      {{ classifyResult }}
     </view>
     <view class="rank" slot="footer">
       <view wx:if="{{isRanked}}">谢谢您的评价！</view>
@@ -53,7 +51,7 @@
     </view>   
   </mp-halfScreenDialog>
   <mp-toptips class="failed" 
-    type="error" 
+    type="error" delay="2500"
     msg="{{failedMsg}}"
     show="{{classifyProcess==='failed'}}" >
   </mp-toptips>

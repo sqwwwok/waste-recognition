@@ -1,7 +1,5 @@
 <switch-page-container _leftPage="/pages/classify/classify" >
-<view class="bg" >
-  <image class="bg-img" mode="scaleToFill" src="../../asset/images/background.png"></image>
-</view>
+<bg-image></bg-image>
 
 <view class="main">
   <view class="content">

@@ -12,12 +12,15 @@
   align-items: center;
 }
 .tip{
-  border: 2rpx solid black;
+  border: 5rpx solid;
   border-radius: 50rpx;
   width: 100rpx;
   height: 100rpx;
   overflow: hidden;
   font-size: 20rpx;
+}
+.tip-choosen{
+  border-color: #16b626;
 }
 .icon{
   height: 60rpx;

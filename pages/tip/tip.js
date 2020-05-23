@@ -3,6 +3,7 @@ Page({
     tipContent: ''
   },
   onShow(){
+    this.getTabBar().setData({_pageName: 'tip'});
     wx.showLoading({
       title: '加载中',
     })

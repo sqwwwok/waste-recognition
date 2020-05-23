@@ -36,7 +36,8 @@
   },
   "usingComponents": {
     "custom-tabbar": "custom-tab-bar/index",
-    "switch-page-container": "components/swiper-page/index"
+    "switch-page-container": "components/swiper-page/index",
+    "bg-image": "components/bg/bg"
   },
   "permission": {
     "scope.userLocation": {

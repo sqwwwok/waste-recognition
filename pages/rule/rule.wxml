@@ -1,7 +1,7 @@
+<bg-image></bg-image>
 <view class="error" wx:if="{{errorInfo}}">
   {{errorInfo}}
 </view>
-
 <view class="main" wx:else>
   <view class="province">
     {{province}}
